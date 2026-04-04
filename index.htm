@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tomasz Kosiński | Portfolio</title>
+  <meta name="description" content="Minimalist personal website for Tomasz Kosiński — network engineer, cybersecurity enthusiast, historian, writer, and martial arts lover." />
+
+  <!-- SEO / Social -->
+  <meta property="og:title" content="Tomasz Kosiński | Network Engineer · Historian" />
+  <meta property="og:description" content="Technical Consulting Engineer at Cisco. PhD in humanities. Writing on history, identity and football culture." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-2: #0a1220;
+      --card: rgba(17, 22, 29, 0.88);
+      --card-strong: #11161d;
+      --text: #e6e6e6;
+      --muted: #8b949e;
+      --line: rgba(255,255,255,0.08);
+      --accent: #c7a76c;
+      --accent-soft: #a88a55;
+      --highlight: #e6d3a3;
+      --max: 1080px;
+      --radius: 24px;
+      --shadow: 0 18px 50px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, #162033 0%, #08101b 42%, #05080d 100%);
+      color: var(--text);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(3, 8, 15, 0.72);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #f1f3f5;
+    }
+
+    .brand small {
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    .brand::after {
+      content: "";
+      width: 42%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+      margin-top: 7px;
+      opacity: 0.85;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--highlight);
+      transform: translateY(-1px);
+    }
+
+    main section {
+      padding: 22px 0;
+      scroll-margin-top: 80px;
+    }
+
+    .hero {
+      padding: 86px 0 54px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .card {
+      background: linear-gradient(180deg, rgba(17,24,39,0.94) 0%, rgba(2,6,23,0.98) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::before,
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(230,211,163,0.045) 0%, transparent 38%);
+      pointer-events: none;
+    }
+
+    .hero-main {
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 430px;
+    }
+
+    .card {
+      padding: 26px;
+    }
+
+    .eyebrow {
+      color: var(--highlight);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.73rem;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.7rem, 5vw, 4.9rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+      max-width: 10ch;
+    }
+
+    h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.7rem, 2vw, 2.3rem);
+      letter-spacing: -0.025em;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      max-width: 62ch;
+      color: #cbd5e1;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button {
+      background: var(--accent);
+      color: #0b0f14;
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px rgba(199,167,108,0.18);
+    }
+
+    .button:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent-soft);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      background: rgba(255,255,255,0.01);
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .button-secondary:hover {
+      background: rgba(199,167,108,0.08);
+      border-color: var(--accent);
+      color: var(--highlight);
+      transform: translateY(-1px);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(2,6,23,0.95) 0%, rgba(9,14,24,0.95) 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.65rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .span-7 { grid-column: span 7; }
+    .span-5 { grid-column: span 5; }
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+
+    .timeline-item + .timeline-item {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    ul.clean li {
+      padding-left: 16px;
+      position: relative;
+      color: #cbd5e1;
+    }
+
+    ul.clean li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #020617;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .tag:hover {
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(199,167,108,0.3);
+      transform: translateY(-1px);
+    }
+
+    .highlight-cert {
+      border: 1px solid var(--accent);
+      color: #fff;
+      background: linear-gradient(90deg, rgba(199,167,108,0.15), rgba(199,167,108,0.05));
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-left: 6px;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+      line-height: 1.45;
+    }
+
+    footer {
+      padding: 42px 0 60px;
+    }
+
+    .footer-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8,
+      .span-12 {
+        grid-column: auto;
+      }
+
+      .hero-main {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-main,
+      .card {
+        padding: 22px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#">
+      Tomasz Kosiński
+      <small>Network Engineer · Historian · Publicist</small>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#passions">Passions</a>
+      <a href="#publications">Publications</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+  <div class="hero-main">
+    <div>
+      <div class="eyebrow">Network Engineer · Cybersecurity · History</div>
+      <h1>Technology, analysis and identity.</h1>
+      <p class="lead">I am Tomasz Kosiński — Technical Consulting Engineer at Cisco with a PhD in humanities. I combine engineering with historical and cultural analysis.</p>
+    </div>
+
+    <div>
+      <div class="hero-actions">
+        <a class="button" href="https://www.linkedin.com/in/tomasz-kosiński-356ba4137/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="button-secondary" href="https://linktr.ee/t.kosinsk" target="_blank" rel="noreferrer">Links</a>
+        <a class="button-secondary" href="https://www.footballheritage.co.uk/contributors/tomasz-kosinski" target="_blank" rel="noreferrer">Football Heritage</a>
+        <a class="button-secondary" href="https://scholar.google.com/citations?user=pS8pbXsAAAAJ&hl=pl" target="_blank" rel="noreferrer">Google Scholar</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-side">
+    <div class="card">
+      <div class="eyebrow">Profile</div>
+      <p>TAC Engineer interested in networks and cybersecurity. Author, historian and lifelong learner combining technical precision with humanities perspective.</p>
+      <div class="stats">
+        <div class="stat">
+          <strong>10+</strong>
+          <span class="small">years of professional experience</span>
+        </div>
+        <div class="stat">
+          <strong>2</strong>
+          <span class="small">core tracks: technology & humanities</span>
+        </div>
+        <div class="stat">
+          <strong>3</strong>
+          <span class="small">languages: Polish, English, German</span>
+        </div>
+        <div class="stat">
+          <strong>10+</strong>
+          <span class="small">certificates across cloud, security and networking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="eyebrow">Current focus</div>
+      <p class="quote">Building a professional path at the intersection of network engineering, cloud, cybersecurity and AI — while continuing research and writing on identity, history and football culture.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head">
+    <div>
+      <h2>About</h2>
+    </div>
+    <p class="section-copy">A concise introduction for people who want to quickly understand what I do, what I value and what drives me.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card span-7">
+      <div class="eyebrow">Professional overview</div>
+      <p>My work sits at the intersection of engineering and humanities — combining analytical thinking with broader cultural understanding. My professional background is rooted in network engineering, troubleshooting and security-oriented problem solving across enterprise environments.</p>
+      <p>Alongside my technical career, I completed a PhD in humanities focused on history and identity. This combination shapes the way I approach complex problems: analytically, precisely and with a wider perspective.</p>
+    </article>
+
+    <aside class="card span-5">
+      <div class="eyebrow">What defines my work</div>
+      <ul class="clean">
+        <li>Analytical thinking and structured problem solving</li>
+        <li>Calm under pressure and precision in execution</li>
+        <li>Clear communication across teams and stakeholders</li>
+        <li>Long-term learning across technology and culture</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="grid">
+    <div class="card span-8">
+      <div class="timeline-item">
+        <div class="meta">Since February 2023 · Cisco</div>
+        <h3>Technical Consulting Engineer — Secure Network Analytics</h3>
+        <ul class="clean">
+          <li>Supported enterprise clients in troubleshooting complex network issues (Cisco, multi-vendor environments)</li>
+          <li>Analyzed and resolved incidents related to Secure Network Analytics (Stealthwatch) and Secure Cloud Analytics</li>
+          <li>Improved incident resolution efficiency by prioritizing critical network failures</li>
+          <li>Worked with cloud-integrated environments and security monitoring tools (AWS, Azure)</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="meta">March 2019 — January 2023 · Marnay / Telefónica Germany project</div>
+        <h3>Fixnet Implementation and Operation Engineer</h3>
+        <ul class="clean">
+          <li>Implementation and configuration of multi-vendor IP, transmission and voice network equipment</li>
+          <li>Troubleshooting and incident handling across network layers</li>
+          <li>Coordination with suppliers and internal departments</li>
+          <li>Remote support for field services</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="meta">October 2014 — February 2019 · Tedgum</div>
+        <h3>Catalogue Editor & Customer Service</h3>
+        <ul class="clean">
+          <li>Editorial work and catalogue management</li>
+          <li>Customer communication in German and English</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="section-head">
+    <div>
+      <h2>Expertise</h2>
+    </div>
+    <p class="section-copy">Technologies, domains and certifications that shape my current direction.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card span-6">
+      <div class="eyebrow">Core areas</div>
+      <div class="tag-list">
+        <span class="tag">Networking</span>
+        <span class="tag">Cybersecurity</span>
+        <span class="tag">Cisco</span>
+        <span class="tag">Juniper</span>
+        <span class="tag">Wireshark</span>
+        <span class="tag">Cloud</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Azure</span>
+        <span class="tag">Oracle Cloud</span>
+        <span class="tag">AI fundamentals</span>
+        <span class="tag">Unix / Linux / macOS</span>
+        <span class="tag">HTML / CSS basics</span>
+      </div>
+    </article>
+
+    <article class="card span-6">
+      <div class="eyebrow">Selected certifications</div>
+      <ul class="clean">
+        <li>JNCIA-Junos</li>
+        <li>Fortinet Certified Associate Cybersecurity</li>
+        <li>Microsoft AZ-900 / SC-900 / AI-900</li>
+        <li>AWS Certified Cloud Practitioner</li>
+        <li>Oracle Cloud Foundations & AI Foundations</li>
+        <li><strong>Cisco CCNA</strong> <span class="highlight-cert">core certification</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="passions">
+  <div class="section-head">
+    <div>
+      <h2>Passions</h2>
+    </div>
+    <p class="section-copy">Beyond work, my interests connect identity, discipline and culture.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card span-7">
+      <div class="eyebrow">Writing & research</div>
+      <p>My academic and public work focuses on history, identity and football culture. I am particularly interested in how sport reflects memory, community and regional belonging.</p>
+      <p>Football, for me, is not only sport. It is a lens through which larger cultural and historical processes become visible.</p>
+    </article>
+
+    <article class="card span-5">
+      <div class="eyebrow">Personal interests</div>
+      <div class="tag-list">
+        <span class="tag">Football culture</span>
+        <span class="tag">Regional identity</span>
+        <span class="tag">History</span>
+        <span class="tag">Martial arts</span>
+        <span class="tag">BJJ brown belt</span>
+        <span class="tag">Combat sports</span>
+        <span class="tag">Technology</span>
+        <span class="tag">AI</span>
+        <span class="tag">Metal music</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="section-head">
+    <div>
+      <h2>Publications & Media</h2>
+    </div>
+    <p class="section-copy">Academic work, public writing, podcast appearances and lectures.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card span-6">
+      <div class="eyebrow">Writing</div>
+      <p>Writing on football culture and identity. Academic publications available on Google Scholar.</p>
+      <div class="hero-actions">
+        <a class="button-secondary" href="https://www.footballheritage.co.uk/contributors/tomasz-kosinski" target="_blank" rel="noreferrer">Football Heritage</a>
+        <a class="button-secondary" href="https://scholar.google.com/citations?user=pS8pbXsAAAAJ&hl=pl" target="_blank" rel="noreferrer">Google Scholar</a>
+      </div>
+    </article>
+
+    <article class="card span-6">
+      <div class="timeline-item" style="margin-top:0; padding-top:0; border-top:none;">
+        <div class="meta">Podcast · The Football Heritage Podcast</div>
+        <h3 style="font-size:1rem; margin-bottom:8px;">Football in Upper Silesia</h3>
+        <p style="font-size:0.95rem; color:var(--muted);">Guest appearance discussing the history, identity and cultural significance of football in Upper Silesia.</p>
+        <div class="hero-actions" style="margin-top:12px;">
+          <a class="button-secondary" href="https://www.youtube.com/watch?v=ZpISzuTLdzw" target="_blank" rel="noreferrer">▶ Watch on YouTube</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="meta">Lecture · Public talk</div>
+        <h3 style="font-size:1rem; margin-bottom:8px;">Zabić de Gaulle’a – historia Lajosa Martona</h3>
+        <p style="font-size:0.95rem; color:var(--muted);">Czy przeciętny człowiek z małej wioski może wpłynąć na losy świata? Historia Lajosa Martona — człowieka, który rzucił wyzwanie Imperium Sowieckiemu, brał udział w zamachu na prezydenta Francji i podjął tajną misję w Czadzie.</p>
+        <div class="hero-actions" style="margin-top:12px;">
+          <a class="button-secondary" href="https://www.youtube.com/watch?v=EjMiF6hJrsE" target="_blank" rel="noreferrer">▶ Watch on YouTube</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact" class="container">
+  <div class="card footer-card">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h2>Let’s connect.</h2>
+      <p class="small">For professional opportunities, collaborations or writing-related conversations.</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button" href="mailto:dodatkowy-aktualista.9o@icloud.com">Email</a>
+      <a class="button-secondary" href="https://www.linkedin.com/in/tomasz-kosiński-356ba4137/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="button-secondary" href="https://www.footballheritage.co.uk/contributors/tomasz-kosinski" target="_blank" rel="noreferrer">Articles</a>
+      <a class="button-secondary" href="https://scholar.google.com/citations?user=pS8pbXsAAAAJ&hl=pl" target="_blank" rel="noreferrer">Google Scholar</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
