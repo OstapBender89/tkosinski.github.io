@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tomasz Kosiński | Portfolio</title>
-  <meta name="description" content="Minimalist personal website for Tomasz Kosiński — network engineer, cybersecurity enthusiast, historian, writer, and martial arts lover." />
+  <meta name="description" content="Tomasz Kosiński — Cisco technical consulting engineer and writer exploring history, regional identity and football culture." />
 
   <!-- SEO / Social -->
   <meta property="og:title" content="Tomasz Kosiński | Network Engineer · Historian" />
@@ -393,6 +393,18 @@
       font-size: 0.95rem;
     }
 
+    :focus-visible { outline: 3px solid var(--highlight); outline-offset: 4px; }
+    .hero { padding: 54px 0 36px; align-items: stretch; }
+    .hero-main { min-height: 0; justify-content: flex-start; }
+    h1 { max-width: 15ch; font-size: clamp(2.7rem, 4.7vw, 4.4rem); line-height: 1.04; }
+    .hero-side { display: flex; }
+    .profile-card { width: 100%; display: flex; flex-direction: column; justify-content: center; }
+    .profile-card .clean { margin-top: 8px; }
+    #contact { scroll-margin-top: 90px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
     @media (max-width: 960px) {
       .hero,
       .grid {
@@ -414,11 +426,15 @@
     }
 
     @media (max-width: 640px) {
+      header { position: static; }
+      main section, #contact { scroll-margin-top: 16px; }
       .nav {
         align-items: flex-start;
         flex-direction: column;
       }
 
+      .hero { padding-top: 28px; }
+      .nav-links { gap: 8px 16px; }
       .hero-main,
       .card {
         padding: 22px;
@@ -439,7 +455,7 @@
   <div class="container nav">
     <a class="brand" href="#">
       Tomasz Kosiński
-      <small>Network Engineer · Historian · Publicist</small>
+      <small>Network Engineer · Historian · Writer</small>
     </a>
     <nav class="nav-links">
       <a href="#about">About</a>
@@ -447,6 +463,7 @@
       <a href="#expertise">Expertise</a>
       <a href="#passions">Passions</a>
       <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -457,47 +474,27 @@
   <div class="hero-main">
     <div>
       <div class="eyebrow">Network Engineer · Cybersecurity · History</div>
-      <h1>Technology, analysis and identity.</h1>
-      <p class="lead">I am Tomasz Kosiński — Technical Consulting Engineer at Cisco with a PhD in humanities. I combine engineering with historical and cultural analysis.</p>
+      <h1>Networks, security and the history of identity.</h1>
+      <p class="lead">I’m Tomasz Kosiński, a Technical Consulting Engineer at Cisco with a PhD in humanities. I also write about history, regional identity and football culture.</p>
     </div>
 
     <div>
       <div class="hero-actions">
-        <a class="button" href="https://www.linkedin.com/in/tomasz-kosiński-356ba4137/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="button-secondary" href="https://linktr.ee/t.kosinsk" target="_blank" rel="noreferrer">Links</a>
-        <a class="button-secondary" href="https://www.footballheritage.co.uk/contributors/tomasz-kosinski" target="_blank" rel="noreferrer">Football Heritage</a>
-        <a class="button-secondary" href="https://scholar.google.com/citations?user=pS8pbXsAAAAJ&hl=pl" target="_blank" rel="noreferrer">Google Scholar</a>
+        <a class="button" href="#experience">Explore my experience</a>
+        <a class="button-secondary" href="#publications">Writing &amp; media</a>
       </div>
     </div>
   </div>
 
   <div class="hero-side">
-    <div class="card">
-      <div class="eyebrow">Profile</div>
-      <p>TAC Engineer interested in networks and cybersecurity. Author, historian and lifelong learner combining technical precision with humanities perspective.</p>
-      <div class="stats">
-        <div class="stat">
-          <strong>10+</strong>
-          <span class="small">years of professional experience</span>
-        </div>
-        <div class="stat">
-          <strong>2</strong>
-          <span class="small">core tracks: technology & humanities</span>
-        </div>
-        <div class="stat">
-          <strong>3</strong>
-          <span class="small">languages: Polish, English, German</span>
-        </div>
-        <div class="stat">
-          <strong>10+</strong>
-          <span class="small">certificates across cloud, security and networking</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="eyebrow">Current focus</div>
-      <p class="quote">Building a professional path at the intersection of network engineering, cloud, cybersecurity and AI — while continuing research and writing on identity, history and football culture.</p>
+    <div class="card profile-card">
+      <div class="eyebrow">At a glance</div>
+      <p>Technical support for enterprise networks and security analytics, alongside research and writing on history and regional identity.</p>
+      <ul class="clean">
+        <li>Cisco Secure Network Analytics and troubleshooting</li>
+        <li>History, identity and football culture</li>
+        <li>Polish, English and German</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -507,14 +504,14 @@
     <div>
       <h2>About</h2>
     </div>
-    <p class="section-copy">A concise introduction for people who want to quickly understand what I do, what I value and what drives me.</p>
+    <p class="section-copy">Technical work and research, grounded in curiosity and careful analysis.</p>
   </div>
 
   <div class="grid">
     <article class="card span-7">
       <div class="eyebrow">Professional overview</div>
-      <p>My work sits at the intersection of engineering and humanities — combining analytical thinking with broader cultural understanding. My professional background is rooted in network engineering, troubleshooting and security-oriented problem solving across enterprise environments.</p>
-      <p>Alongside my technical career, I completed a PhD in humanities focused on history and identity. This combination shapes the way I approach complex problems: analytically, precisely and with a wider perspective.</p>
+      <p>My technical work focuses on troubleshooting networks and security analytics in enterprise environments. I support customers working with Cisco Secure Network Analytics and have experience with multi-vendor infrastructure.</p>
+      <p>Alongside my technical career, I completed a PhD in humanities and continue to research and write about history, identity and football culture, including the history of Upper Silesia.</p>
     </article>
 
     <aside class="card span-5">
@@ -532,14 +529,14 @@
 <section id="experience">
   <h2>Experience</h2>
   <div class="grid">
-    <div class="card span-8">
+    <div class="card span-12">
       <div class="timeline-item">
         <div class="meta">Since February 2023 · Cisco</div>
         <h3>Technical Consulting Engineer — Secure Network Analytics</h3>
         <ul class="clean">
           <li>Supported enterprise clients in troubleshooting complex network issues (Cisco, multi-vendor environments)</li>
           <li>Analyzed and resolved incidents related to Secure Network Analytics (Stealthwatch) and Secure Cloud Analytics</li>
-          <li>Improved incident resolution efficiency by prioritizing critical network failures</li>
+          <li>Prioritized critical network failures during incident handling</li>
           <li>Worked with cloud-integrated environments and security monitoring tools (AWS, Azure)</li>
         </ul>
       </div>
@@ -681,7 +678,7 @@
       <div class="timeline-item">
         <div class="meta">Lecture · Public talk</div>
         <h3 style="font-size:1rem; margin-bottom:8px;">Zabić de Gaulle’a – historia Lajosa Martona</h3>
-        <p style="font-size:0.95rem; color:var(--muted);">Czy przeciętny człowiek z małej wioski może wpłynąć na losy świata? Historia Lajosa Martona — człowieka, który rzucił wyzwanie Imperium Sowieckiemu, brał udział w zamachu na prezydenta Francji i podjął tajną misję w Czadzie.</p>
+        <p style="font-size:0.95rem; color:var(--muted);">A talk on the life of Lajos Marton, from opposition to the Soviet Union to the attempt on Charles de Gaulle and a mission in Chad. In Polish.</p>
         <div class="hero-actions" style="margin-top:12px;">
           <a class="button-secondary" href="https://www.youtube.com/watch?v=EjMiF6hJrsE" target="_blank" rel="noreferrer">▶ Watch on YouTube</a>
         </div>
@@ -702,8 +699,6 @@
     <div class="hero-actions">
       <a class="button" href="mailto:dodatkowy-aktualista.9o@icloud.com">Email</a>
       <a class="button-secondary" href="https://www.linkedin.com/in/tomasz-kosiński-356ba4137/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a class="button-secondary" href="https://www.footballheritage.co.uk/contributors/tomasz-kosinski" target="_blank" rel="noreferrer">Articles</a>
-      <a class="button-secondary" href="https://scholar.google.com/citations?user=pS8pbXsAAAAJ&hl=pl" target="_blank" rel="noreferrer">Google Scholar</a>
     </div>
   </div>
 </footer>
